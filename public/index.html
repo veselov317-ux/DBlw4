@@ -8,24 +8,41 @@
 </head>
 <body>
 <div class="container">
-<h1>Movies Collection</h1>
-<form id="movie-form" class="form">
-<label for="title">Title</label>
-<input type="text" id="title" required />
-<label for="director">Director</label>
-<input type="text" id="director" required />
-<label for="year">Year</label>
-<input type="number" id="year" required />
-<label for="genre">Genre</label>
-<input type="text" id="genre" required />
-<label for="rating">Rating</label>
-<input type="number" id="rating" step="0.1" required />
-<div class="button-group">
-<button type="submit">Add Movie</button>
-<button id="delete-all">Delete All Movies</button>
-</div>
-</form>
-<div id="movies-list" class="movies-list"></div>
+  <h1>Movies Collection</h1>
+
+  
+  <form id="movie-form" class="form">
+    <label for="title">Title</label>
+    <input type="text" id="title" required />
+    <label for="director">Director</label>
+    <input type="text" id="director" required />
+    <label for="year">Year</label>
+    <input type="number" id="year" required />
+    <label for="genre">Genre</label>
+    <input type="text" id="genre" required />
+    <label for="rating">Rating</label>
+    <input type="number" id="rating" step="0.1" required />
+    <div class="button-group">
+      <button type="submit">Add Movie</button>
+      <button id="delete-all" type="button">Delete All Movies</button>
+    </div>
+  </form>
+
+  
+  <div id="movies-list" class="movies-list"></div>
+
+  
+  <div id="review-section" style="margin-top:20px;">
+    <h3 id="review-title">Add Review</h3>
+    <form id="review-form">
+      <input type="text" id="review-user" placeholder="Your name" required>
+      <input type="text" id="review-comment" placeholder="Comment" required>
+      <input type="hidden" id="review-movie-id" value="">
+      <button type="submit">Add Review</button>
+    </form>
+    <div id="reviews-list"></div>
+  </div>
+
 </div>
 <script src="app.js"></script>
 </body>

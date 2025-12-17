@@ -1,0 +1,97 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: #8075FF;
+color: #333333;
+}
+
+
+.container {
+max-width: 1200px;
+margin: 20px auto;
+padding: 20px;
+background-color: #FCFCFC;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+text-align: center;
+margin-bottom: 20px;
+color: black;
+}
+
+
+.form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+margin-bottom: 20px;
+}
+
+
+.form label {
+font-weight: bold;
+}
+
+
+.form input {
+padding: 10px;
+font-size: 16px;
+border: 1px solid #dddddd;
+border-radius: 5px;
+}
+
+
+.button-group {
+display: flex;
+gap: 10px;
+margin-top: 15px;
+}
+
+
+.button-group button {
+flex-grow: 1;
+padding: 15px;
+font-size: 16px;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+height: 50px;
+}
+
+
+#add-button {
+background-color: black;
+color: white;
+}
+
+
+#add-button:hover {
+background-color: #8075FF;
+}
+
+
+#delete-all {
+background-color: white;
+border: 2px solid black;
+color: black;
+}
+
+
+#delete-all:hover {
+background-color: #8075FF;
+color: white;
+}
+
+
+.movies-list {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 20px;
+}
+
+

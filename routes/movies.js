@@ -5,17 +5,17 @@ const Movie = require('../models/Movie');
 const router = express.Router();
 
 
-// GET /movies
+
 router.get('/', async (req, res) => {
   try {
-    const movies = await Movie.find({}); // теперь точно работает
+    const movies = await Movie.find({}); 
     res.json(movies);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
 
-// POST /movies
+
 router.post('/', async (req, res) => {
   try {
     const newMovie = new Movie(req.body);
@@ -55,6 +55,37 @@ router.get('/count-by-year', async (req, res) => {
       { $sort: { _id: 1 } } 
     ]);
     res.json(result);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+router.post('/:id/reviews', async (req, res) => {
+  const { user, comment } = req.body;
+
+  try {
+    const movie = await Movie.findById(req.params.id);
+    if (!movie) return res.status(404).json({ message: 'Movie not found' });
+
+    movie.reviews.push({ user, comment });
+    await movie.save();
+
+    res.status(201).json({
+      message: 'Review added',
+      review: movie.reviews[movie.reviews.length - 1]
+    });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+
+router.get('/:id/reviews', async (req, res) => {
+  try {
+    const movie = await Movie.findById(req.params.id);
+    if (!movie) return res.status(404).json({ message: 'Movie not found' });
+
+    res.json(movie.reviews);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
