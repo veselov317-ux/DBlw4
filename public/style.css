@@ -101,3 +101,28 @@ gap: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+/* Card actions (buttons inside movie cards) */
+.movie-card .card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.movie-card .card-actions button {
+  flex: 1 1 auto;
+  padding: 8px 10px;
+  height: 36px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.08s ease, opacity 0.08s ease;
+}
+.movie-card .card-actions .view-reviews { background: #eef2ff; border-color:#c7d2fe; }
+.movie-card .card-actions .add-review { background: #10b981; color: #fff; border-color: #059669; }
+.movie-card .card-actions .edit-movie { background: #f59e0b; color: #fff; border-color: #d97706; }
+.movie-card .card-actions .delete-movie { background: #ef4444; color: #fff; border-color: #ef4444; }
+.movie-card .card-actions button:hover { opacity: 0.95; transform: translateY(-1px); }
